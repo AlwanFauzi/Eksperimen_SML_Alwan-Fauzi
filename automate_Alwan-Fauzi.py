@@ -6,7 +6,7 @@ Merupakan konversi dari notebook `Eksperimen_Alwan-Fauzi.ipynb` (bagian Data Pre
 menjadi sebuah fungsi yang dapat dipanggil ulang (reusable) maupun dijalankan via CLI.
 
 Penggunaan CLI:
-    python automate_Alwan-Fauzi.py --input namadataset_raw/train.csv --output namadataset_preprocessing
+    python automate_Alwan-Fauzi.py --input house-prices-advanced-regression-techniques_raw/train.csv --output house-prices-advanced-regression-techniques_preprocessing
 """
 
 import argparse
@@ -128,8 +128,8 @@ def preprocess_data(input_path: str, output_dir: str, test_size: float = 0.2, ra
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Preprocessing otomatis dataset House Prices")
-    parser.add_argument("--input", default="namadataset_raw/train.csv", help="Path dataset mentah (CSV)")
-    parser.add_argument("--output", default="namadataset_preprocessing", help="Folder output hasil preprocessing")
+    parser.add_argument("--input", default="house-prices-advanced-regression-techniques_raw/train.csv", help="Path dataset mentah (CSV)")
+    parser.add_argument("--output", default="house-prices-advanced-regression-techniques_preprocessing", help="Folder output hasil preprocessing")
     parser.add_argument("--test-size", type=float, default=0.2)
     parser.add_argument("--random-state", type=int, default=42)
     args = parser.parse_args()

@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "namadataset_raw/**"
+      - "house-prices-advanced-regression-techniques_raw/**"
       - "automate_Alwan-Fauzi.py"
       - ".github/workflows/preprocessing.yml"
   workflow_dispatch:
@@ -29,12 +29,12 @@ jobs:
 
       - name: Run automated preprocessing
         run: |
-          python automate_Alwan-Fauzi.py --input namadataset_raw/train.csv --output namadataset_preprocessing
+          python automate_Alwan-Fauzi.py --input house-prices-advanced-regression-techniques_raw/train.csv --output house-prices-advanced-regression-techniques_preprocessing
 
       - name: Commit & push preprocessed dataset
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "github-actions[bot]"
-          git add namadataset_preprocessing
+          git add house-prices-advanced-regression-techniques_preprocessing
           git diff --staged --quiet || git commit -m "ci: update preprocessed dataset [skip ci]"
           git push
